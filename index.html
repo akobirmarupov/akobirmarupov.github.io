@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="uz" data-lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#07080c">
+    <title>Akobir Marupov — Backend Developer</title>
+    <meta name="description"
+          content="Akobir Marupov — Python / Django backend dasturchi. REST API, PostgreSQL, Redis, Celery.">
+
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2300f5c0'/><text y='70' x='50' text-anchor='middle' font-size='54' font-family='sans-serif' font-weight='bold' fill='%23041210'>A</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="static/cv/css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= Preloader ================= -->
+    <div class="preloader" id="preloader">
+        <div>
+            <div class="loader-ring"></div>
+            <div class="loader-text">Akobir Marupov</div>
+        </div>
+    </div>
+
+    <!-- ================= Kursor ================= -->
+    <div class="cursor-ring" id="cursorRing"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+
+    <!-- ================= Scroll chizig'i ================= -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- ================= Fon ================= -->
+    <div class="bg-grid"></div>
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    <canvas id="particles"></canvas>
+    <div class="bg-noise"></div>
+
+    <!-- ================= Navigatsiya ================= -->
+    <nav class="site-nav" id="nav">
+        <div class="wrap nav-inner">
+            <a href="#home" class="logo">
+                <span class="logo-mark">AM</span>
+                <span>Akobir Marupov</span>
+            </a>
+
+            <ul class="nav-links">
+                
+                <li><a href="#home" data-nav="home" data-uz="Bosh sahifa"
+                       data-en="Home">Bosh sahifa</a></li>
+                
+                <li><a href="#about" data-nav="about" data-uz="Men haqimda"
+                       data-en="About">Men haqimda</a></li>
+                
+                <li><a href="#skills" data-nav="skills" data-uz="Ko‘nikmalar"
+                       data-en="Skills">Ko‘nikmalar</a></li>
+                
+                <li><a href="#projects" data-nav="projects" data-uz="Loyihalar"
+                       data-en="Projects">Loyihalar</a></li>
+                
+                <li><a href="#process" data-nav="process" data-uz="Ish uslubim"
+                       data-en="Process">Ish uslubim</a></li>
+                
+                <li><a href="#contact" data-nav="contact" data-uz="Aloqa"
+                       data-en="Contact">Aloqa</a></li>
+                
+            </ul>
+
+            <div class="nav-right">
+                <div class="lang-switch" id="langSwitch">
+                    <span class="lang-pill" id="langPill"></span>
+                    <button type="button" data-set-lang="uz" class="on">UZ</button>
+                    <button type="button" data-set-lang="en">EN</button>
+                </div>
+                <button type="button" class="burger" id="burger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= Mobil menyu ================= -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            
+            <li><a href="#home" data-uz="Bosh sahifa"
+                   data-en="Home">Bosh sahifa</a></li>
+            
+            <li><a href="#about" data-uz="Men haqimda"
+                   data-en="About">Men haqimda</a></li>
+            
+            <li><a href="#skills" data-uz="Ko‘nikmalar"
+                   data-en="Skills">Ko‘nikmalar</a></li>
+            
+            <li><a href="#projects" data-uz="Loyihalar"
+                   data-en="Projects">Loyihalar</a></li>
+            
+            <li><a href="#process" data-uz="Ish uslubim"
+                   data-en="Process">Ish uslubim</a></li>
+            
+            <li><a href="#contact" data-uz="Aloqa"
+                   data-en="Contact">Aloqa</a></li>
+            
+        </ul>
+    </div>
+
+    <main>
+
+        <!-- ================= HERO ================= -->
+        <section class="hero" id="home">
+            <div class="wrap hero-grid">
+
+                <div class="hero-left">
+                    <span class="tag" data-reveal>
+                        <i class="dot"></i>
+                        <span data-uz="Ish takliflariga ochiq"
+                              data-en="Open to opportunities">Ish takliflariga ochiq</span>
+                    </span>
+
+                    <h1 data-reveal style="--delay:80ms">
+                        <span data-uz="Salom, men" data-en="Hi, I am">Salom, men</span><br>
+                        <span class="grad">Akobir Marupov</span>
+                    </h1>
+
+                    <div class="role" data-reveal style="--delay:150ms">
+                        <span id="typed"></span><span class="cursor-bar"></span>
+                    </div>
+
+                    <p class="lead" data-reveal style="--delay:220ms"
+                       data-uz="Python va Django yordamida real foydalanuvchilarga mo‘ljallangan backend tizimlar quraman: REST API, autentifikatsiya, to‘lov va obuna mantig‘i, fon vazifalari, keshlash va ma’lumotlar bazasini optimallashtirish." data-en="I build production-minded backends with Python and Django: REST APIs, authentication, billing and subscription logic, background jobs, caching and database optimisation.">Python va Django yordamida real foydalanuvchilarga mo‘ljallangan backend tizimlar quraman: REST API, autentifikatsiya, to‘lov va obuna mantig‘i, fon vazifalari, keshlash va ma’lumotlar bazasini optimallashtirish.</p>
+
+                    <div class="hero-actions" data-reveal style="--delay:290ms">
+                        <a href="#projects" class="btn btn-fill" data-magnet>
+                            <span data-uz="Loyihalarni ko‘rish" data-en="View projects">Loyihalarni ko‘rish</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="#contact" class="btn btn-ghost" data-magnet>
+                            <span data-uz="Bog‘lanish" data-en="Get in touch">Bog‘lanish</span>
+                        </a>
+                    </div>
+
+                    <div class="socials" data-reveal style="--delay:360ms">
+                        <a class="social" href="https://github.com/AkobirMarupov" target="_blank" rel="noopener"
+                           aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 .5C5.73.5.9 5.33.9 11.6c0 4.9 3.17 9.06 7.57 10.53.55.1.75-.24.75-.53v-1.9c-3.08.67-3.73-1.48-3.73-1.48-.5-1.29-1.23-1.63-1.23-1.63-1.01-.69.08-.67.08-.67 1.11.08 1.7 1.15 1.7 1.15.99 1.7 2.6 1.21 3.23.93.1-.72.39-1.21.7-1.49-2.46-.28-5.05-1.23-5.05-5.48 0-1.21.43-2.2 1.14-2.98-.11-.28-.5-1.41.11-2.94 0 0 .93-.3 3.05 1.14a10.5 10.5 0 0 1 5.56 0c2.12-1.44 3.05-1.14 3.05-1.14.61 1.53.22 2.66.11 2.94.71.78 1.14 1.77 1.14 2.98 0 4.26-2.6 5.2-5.07 5.47.4.35.76 1.03.76 2.08v3.08c0 .3.2.64.76.53 4.4-1.47 7.56-5.63 7.56-10.53C23.1 5.33 18.27.5 12 .5z" />
+                            </svg>
+                        </a>
+                        <a class="social" href="https://t.me/akobir_marupov" target="_blank" rel="noopener"
+                           aria-label="Telegram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M21.9 4.3 18.6 19.9c-.25 1.1-.9 1.37-1.83.85l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.14 9.36-8.46c.4-.36-.09-.56-.63-.2L5.78 13.3l-4.98-1.56c-1.08-.34-1.1-1.08.23-1.6l19.47-7.5c.9-.33 1.69.2 1.4 1.66z" />
+                            </svg>
+                        </a>
+                        <a class="social" href="https://www.linkedin.com/in/akobir-marupov-55b528401/" target="_blank" rel="noopener"
+                           aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.64h.05c.53-.95 1.83-1.95 3.76-1.95 4.02 0 4.76 2.5 4.76 5.77V21h-4v-5.63c0-1.34-.03-3.07-1.9-3.07-1.9 0-2.19 1.46-2.19 2.97V21h-4V9z" />
+                            </svg>
+                        </a>
+                        <a class="social" href="tel:+998771210418" aria-label="Telefon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.26-1.27a2 2 0 0 1 2.11-.45c.9.33 1.85.56 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-photo" data-reveal="zoom" style="--delay:200ms">
+                    <div class="photo-glow"></div>
+                    <div class="photo-frame">
+                        <img src="static/cv/img/akobir.png" alt="Akobir Marupov">
+                    </div>
+                    <div class="photo-badge badge-1">
+                        <b>&lt;/&gt;</b>
+                        <span data-uz="Django · DRF" data-en="Django · DRF">Django · DRF</span>
+                    </div>
+                    <div class="photo-badge badge-2">
+                        <b>{ }</b>
+                        <span data-uz="REST API" data-en="REST API">REST API</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-hint">
+                <div class="mouse"></div>
+                <span data-uz="pastga" data-en="scroll">pastga</span>
+            </div>
+        </section>
+
+        <!-- ================= Texnologiyalar lentasi ================= -->
+        <section class="marquee">
+            <div class="marquee-track" id="marqueeTrack">
+                <span class="marquee-item">Python</span><span class="marquee-item">Django</span><span class="marquee-item">Django REST Framework</span><span class="marquee-item">PostgreSQL</span><span class="marquee-item">Redis</span><span class="marquee-item">Celery</span><span class="marquee-item">JWT</span><span class="marquee-item">OAuth 2.0</span><span class="marquee-item">Docker</span><span class="marquee-item">Git</span><span class="marquee-item">Nginx</span><span class="marquee-item">Gunicorn</span><span class="marquee-item">drf-spectacular</span><span class="marquee-item">GitHub Actions</span><span class="marquee-item">Linux</span><span class="marquee-item">REST API</span><span class="marquee-item">aiogram</span><span class="marquee-item">SQL</span>
+                <span class="marquee-item">Python</span><span class="marquee-item">Django</span><span class="marquee-item">Django REST Framework</span><span class="marquee-item">PostgreSQL</span><span class="marquee-item">Redis</span><span class="marquee-item">Celery</span><span class="marquee-item">JWT</span><span class="marquee-item">OAuth 2.0</span><span class="marquee-item">Docker</span><span class="marquee-item">Git</span><span class="marquee-item">Nginx</span><span class="marquee-item">Gunicorn</span><span class="marquee-item">drf-spectacular</span><span class="marquee-item">GitHub Actions</span><span class="marquee-item">Linux</span><span class="marquee-item">REST API</span><span class="marquee-item">aiogram</span><span class="marquee-item">SQL</span>
+            </div>
+        </section>
+
+        <!-- ================= Statistika ================= -->
+        <section style="padding:70px 0 0">
+            <div class="wrap stats">
+                
+                <div class="card stat" data-reveal style="--delay:000ms">
+                    <div class="num grad"><span class="count" data-target="20">0</span>k+</div>
+                    <div class="label" data-uz="yozilgan kod qatori" data-en="lines of code written">yozilgan kod qatori</div>
+                </div>
+                
+                <div class="card stat" data-reveal style="--delay:100ms">
+                    <div class="num grad"><span class="count" data-target="18">0</span></div>
+                    <div class="label" data-uz="Django ilovalari" data-en="Django apps built">Django ilovalari</div>
+                </div>
+                
+                <div class="card stat" data-reveal style="--delay:200ms">
+                    <div class="num grad"><span class="count" data-target="2">0</span></div>
+                    <div class="label" data-uz="yirik platforma" data-en="large platforms">yirik platforma</div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- ================= Men haqimda ================= -->
+        <section id="about">
+            <div class="wrap">
+                <div class="sec-head" data-reveal>
+                    <span class="tag"><i class="dot"></i><span data-uz="Men haqimda"
+                              data-en="About me">Men haqimda</span></span>
+                    <h2>
+                        <span data-uz="Backend — bu tizimning" data-en="Backend is the part">Backend — bu tizimning</span>
+                        <span class="grad" data-uz="ko‘rinmas qismi" data-en="nobody sees">ko‘rinmas qismi</span>
+                    </h2>
+                    <p data-uz="Va aynan shu qism ishlamay qolsa, qolgan hamma narsa to‘xtaydi."
+                       data-en="And when that part stops working, everything else stops with it.">
+                        Va aynan shu qism ishlamay qolsa, qolgan hamma narsa to‘xtaydi.</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text" data-reveal="left">
+                        
+                        <p data-uz="Men Akobir Marupov, backend dasturchiman. Asosiy ishim — Python va Django yordamida haqiqiy foydalanuvchilar ishlatadigan tizimlarning ichki qismini qurish." data-en="I am Akobir Marupov, a backend developer. My work is building the inside of systems real people use, with Python and Django.">Men Akobir Marupov, backend dasturchiman. Asosiy ishim — Python va Django yordamida haqiqiy foydalanuvchilar ishlatadigan tizimlarning ichki qismini qurish.</p>
+                        
+                        <p data-uz="Men uchun backend — bu shunchaki endpoint yozish emas. Bu ma’lumot modelini to‘g‘ri loyihalash, biznes qoidalarini bir joyda saqlash, sekin so‘rovlarni topib tuzatish va tizim kattalashganda ham ishlab turishini ta’minlash." data-en="To me backend is not just writing endpoints. It is designing the data model right, keeping business rules in one place, hunting down slow queries, and making sure things still work when the system grows.">Men uchun backend — bu shunchaki endpoint yozish emas. Bu ma’lumot modelini to‘g‘ri loyihalash, biznes qoidalarini bir joyda saqlash, sekin so‘rovlarni topib tuzatish va tizim kattalashganda ham ishlab turishini ta’minlash.</p>
+                        
+                        <p data-uz="Oxirgi loyihalarimda ta’lim platformasi va bron qilish tizimini noldan qurdim: autentifikatsiya, obuna va to‘lov mantig‘i, fon vazifalari, keshlash va reyting tizimlari — hammasi mening zimmamda edi." data-en="In my recent projects I built an education platform and a booking system from scratch: authentication, subscription and billing logic, background jobs, caching and rating systems were all mine to own.">Oxirgi loyihalarimda ta’lim platformasi va bron qilish tizimini noldan qurdim: autentifikatsiya, obuna va to‘lov mantig‘i, fon vazifalari, keshlash va reyting tizimlari — hammasi mening zimmamda edi.</p>
+                        
+
+                        <ul class="fact-list">
+                            
+                            <li>
+                                <span class="ico">
+                                    
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                         stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                        <circle cx="12" cy="10" r="3" />
+                                    </svg>
+                                    
+                                </span>
+                                <span>
+                                    <span class="k" data-uz="Joylashuv:" data-en="Location:">Joylashuv:</span>
+                                    <b data-uz="Toshkent, O‘zbekiston" data-en="Tashkent, Uzbekistan">Toshkent, O‘zbekiston</b>
+                                </span>
+                            </li>
+                            
+                            <li>
+                                <span class="ico">
+                                    
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                         stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
+                                    </svg>
+                                    
+                                </span>
+                                <span>
+                                    <span class="k" data-uz="Yo‘nalish:" data-en="Focus:">Yo‘nalish:</span>
+                                    <b data-uz="Backend — Python / Django / DRF" data-en="Backend — Python / Django / DRF">Backend — Python / Django / DRF</b>
+                                </span>
+                            </li>
+                            
+                            <li>
+                                <span class="ico">
+                                    
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                         stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20a15.3 15.3 0 0 1 0-20z" />
+                                    </svg>
+                                    
+                                </span>
+                                <span>
+                                    <span class="k" data-uz="Tillar:" data-en="Languages:">Tillar:</span>
+                                    <b data-uz="O‘zbek, rus, ingliz (texnik)" data-en="Uzbek, Russian, English (technical)">O‘zbek, rus, ingliz (texnik)</b>
+                                </span>
+                            </li>
+                            
+                            <li>
+                                <span class="ico">
+                                    
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                         stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M20 6L9 17l-5-5" />
+                                    </svg>
+                                    
+                                </span>
+                                <span>
+                                    <span class="k" data-uz="Holat:" data-en="Status:">Holat:</span>
+                                    <b data-uz="Yangi loyihalarga ochiq" data-en="Open to new projects">Yangi loyihalarga ochiq</b>
+                                </span>
+                            </li>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="code-window" data-reveal="right" style="--delay:120ms">
+                        <div class="code-bar">
+                            <i></i><i></i><i></i>
+                            <span class="name">developer.py</span>
+                        </div>
+                        <div class="code-body">
+<pre><span class="c-key">class</span> <span class="c-fn">AkobirMarupov</span>:
+    role     = <span class="c-str">"Backend Developer"</span>
+    stack    = [<span class="c-str">"Python"</span>, <span class="c-str">"Django"</span>, <span class="c-str">"DRF"</span>]
+    storage  = [<span class="c-str">"PostgreSQL"</span>, <span class="c-str">"Redis"</span>]
+    async_by = <span class="c-str">"Celery"</span>
+    auth     = [<span class="c-str">"JWT"</span>, <span class="c-str">"OAuth"</span>]
+
+    <span class="c-key">def</span> <span class="c-fn">build</span>(self, idea):
+        <span class="c-com"># model → servis → API → test</span>
+        api = self.design(idea)
+        <span class="c-key">return</span> api.ship(tested=<span class="c-key">True</span>)
+
+    <span class="c-key">def</span> <span class="c-fn">is_available</span>(self):
+        <span class="c-key">return</span> <span class="c-key">True</span>  <span class="c-com"># yozing!</span></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Ko'nikmalar ================= -->
+        <section id="skills">
+            <div class="wrap">
+                <div class="sec-head" data-reveal>
+                    <span class="tag"><i class="dot"></i><span data-uz="Ko‘nikmalar"
+                              data-en="Skills">Ko‘nikmalar</span></span>
+                    <h2>
+                        <span data-uz="Kundalik ishlatadigan" data-en="The tools I use">Kundalik ishlatadigan</span>
+                        <span class="grad" data-uz="vositalarim" data-en="every day">vositalarim</span>
+                    </h2>
+                    <p data-uz="Har bir texnologiya yonida — uni aniq qayerda ishlatganim."
+                       data-en="Next to each one: exactly where I have used it.">
+                        Har bir texnologiya yonida — uni aniq qayerda ishlatganim.</p>
+                </div>
+
+                <div class="skill-tabs" data-reveal>
+                    
+                    <button type="button" class="skill-tab on"
+                            data-tab="core" data-uz="Asosiy backend"
+                            data-en="Core backend">Asosiy backend</button>
+                    
+                    <button type="button" class="skill-tab"
+                            data-tab="data" data-uz="Ma’lumotlar bazasi"
+                            data-en="Databases &amp; caching">Ma’lumotlar bazasi</button>
+                    
+                    <button type="button" class="skill-tab"
+                            data-tab="api" data-uz="API va xavfsizlik"
+                            data-en="API &amp; security">API va xavfsizlik</button>
+                    
+                    <button type="button" class="skill-tab"
+                            data-tab="ops" data-uz="Vositalar va DevOps"
+                            data-en="Tools &amp; DevOps">Vositalar va DevOps</button>
+                    
+                    <button type="button" class="skill-tab"
+                            data-tab="extra" data-uz="Qo‘shimcha"
+                            data-en="Extra">Qo‘shimcha</button>
+                    
+                </div>
+
+                
+                <div class="skill-panel on" data-panel="core">
+                    
+                    <div class="card skill" data-tilt>
+                        <div class="skill-top">
+                            <div class="skill-name">
+                                <span class="skill-ico">Py</span>
+                                <span data-uz="Python" data-en="Python">Python</span>
+                            </div>
+                            <span class="skill-pct">92%</span>
+                        </div>
+                        <div class="bar"><span data-level="92"></span></div>
+                        <p class="skill-note" data-uz="OOP, asinxron kod, toza arxitektura, test yozish." data-en="OOP, async code, clean architecture, writing tests.">OOP, asinxron kod, toza arxitektura, test yozish.</p>
+                    </div>
+                    
+                    <div class="card skill" data-tilt>
+                        <div class="skill-top">
+                            <div class="skill-name">
+                                <span class="skill-ico">Dj</span>
+                                <span data-uz="Django" data-en="Django">Django</span>
+                            </div>
+                            <span class="skill-pct">90%</span>
+                        </div>
+                        <div class="bar"><span data-level="90"></span></div>
+                        <p class="skill-note" data-uz="Modellar, signal, middleware, admin, management buyruqlari." data-en="Models, signals, middleware, admin, management commands.">Modellar, signal, middleware, admin, management buyruqlari.</p>
+                    </div>
+                    
+                    <div class="card skill" data-tilt>
+                        <div class="skill-top">
+                            <div class="skill-name">
+                                <span class="skill-ico">DRF</span>
+                                <span data-uz="Django REST Framework" data-en="Django REST Framework">Django REST Framework</span>
+                            </div>
+                            <span class="skill-pct">88%</span>
+                        </div>
+                        <div class="bar"><span data-level="88"></span></div>
+                        <p class="skill-note" data-uz="Serializer, ViewSet, permission, throttling, filtrlash." data-en="Serializers, viewsets, permissions, throttling, filtering.">Serializer, ViewSet, permission, throttling, filtrlash.</p>
+                    </div>
+                    
+                    <div class="card skill" data-tilt>
+                        <div class="skill-top">
+                            <div class="skill-name">
+                                <span class="skill-ico">Cel</span>
+                                <span data-uz="Celery + Beat" data-en="Celery + Beat">Celery + Beat</span>
+                            </div>
+                            <span class="skill-pct">80%</span>
+                        </div>
+                        <div class="bar"><span data-level="80"></span></div>
+                        <p class="skill-note" data-uz="Fon vazifalari, jadval bo‘yicha ishlar, qayta urinish mantig‘i." data-en="Background tasks, scheduled jobs, retry logic.">Fon vazifalari, jadval bo‘yicha ishlar, qayta urinish mantig‘i.</p>
+                    </div>
+                    
+                </div>
+                
+                <div class="skill-panel" data-panel="data">
+                    
+                    <div class="card skill" data-tilt>
+                        <div class="skill-top">
+                            <div class="skill-name">
+                                <span class="skill-ico">PG</span>
+                                <span data-uz="PostgreSQL" data-en="PostgreSQL">PostgreSQL</span>
+                            </div>
+                            <span class="skill-pct">86%</span>
+                        </div>
+                        <div class="bar"><span data-level="86"></span></div>
+                        <p class="skill-note" data-uz="Sxema loyihalash, indekslar, murakkab so‘rovlar, migratsiyalar." data-en="Schema design, indexes, complex queries, migrations.">Sxema loyihalash, indekslar, murakkab so‘rovlar, migratsiyalar.</p>
+                    </div>
+                    
+                    <div class="card skill" data-tilt>
+                        <div class="skill-top">
+                            <div class="skill-name">
+                                <span class="skill-ico">Rds</span>
+                                <span data-uz="Redis" data-en="Redis">Redis</span>
+                            </div>
+                            <span class="skill-pct">82%</span>
+                        </div>
+                        <div class="bar"><span data-level="82"></span></div>
+                        <p class="skill-note" data-uz="Kesh, sessiya saqlash, Celery uchun broker, hisoblagichlar." data-en="Caching, session storage, Celery broker, counters.">Kesh, sessiya saqlash, Celery uchun broker, hisoblagichlar.</p>
+                    </div>
+                    
+                    <div class="card skill" data-tilt>
+                        <div class="skill-top">
+                            <div class="skill-name">
+                                <span class="skill-ico">ORM</span>
+                                <span data-uz="ORM optimizatsiyasi" data-en="ORM optimisation">ORM optimizatsiyasi</span>
+                            </div>
+                            <span class="skill-pct">84%</span>
+                        </div>
+                        <div class="bar"><span data-level="84"></span></div>
+                        <p class="skill-note" data-uz="select_related, prefetch, annotate — N+1 muammosini yo‘qotish." data-en="select_related, prefetch, annotate — killing N+1 queries.">select_related, prefetch, annotate — N+1 muammosini yo‘qotish.</p>
+                    </div>
+                    
+                    <div class="card skill" data-tilt>
+                        <div class="skill-top">
+                            <div class="skill-name">
+                                <span class="skill-ico">SQL</span>
+                                <span data-uz="SQL" data-en="SQL">SQL</span>
+                            </div>
+                            <span class="skill-pct">78%</span>
+                        </div>
+                        <div class="bar"><span data-level="78"></span></div>
+                        <p class="skill-note" data-uz="JOIN, agregatsiya, oyna funksiyalari, so‘rov tahlili." data-en="Joins, aggregation, window functions, query analysis.">JOIN, agregatsiya, oyna funksiyalari, so‘rov tahlili.</p>
+                    </div>
+                    
+                </div>
+                
+                <div class="skill-panel" data-panel="api">
+                    
+                    <div class="card skill" data-tilt>
+                        <div class="skill-top">
+                            <div class="skill-name">
+                                <span class="skill-ico">API</span>
+                                <span data-uz="REST API dizayni" data-en="REST API design">REST API dizayni</span>
+                            </div>
+                            <span class="skill-pct">88%</span>
+                        </div>
+                        <div class="bar"><span data-level="88"></span></div>
+                        <p class="skill-note" data-uz="Resurslarga bo‘lingan, versiyalanadigan, hujjatlashtirilgan API." data-en="Resource-oriented, versioned, documented APIs.">Resurslarga bo‘lingan, versiyalanadigan, hujjatlashtirilgan API.</p>
+                    </div>
+                    
+                    <div class="card skill" data-tilt>
+                        <div class="skill-top">
+                            <div class="skill-name">
+                                <span class="skill-ico">JWT</span>
+                                <span data-uz="JWT / SimpleJWT" data-en="JWT / SimpleJWT">JWT / SimpleJWT</span>
+                            </div>
+                            <span class="skill-pct">86%</span>
+                        </div>
+                        <div class="bar"><span data-level="86"></span></div>
+                        <p class="skill-note" data-uz="Access/refresh, token rotatsiyasi, blacklist." data-en="Access/refresh tokens, rotation, blacklisting.">Access/refresh, token rotatsiyasi, blacklist.</p>
+                    </div>
+                    
+                    <div class="card skill" data-tilt>
+                        <div class="skill-top">
+                            <div class="skill-name">
+                                <span class="skill-ico">OA</span>
+                                <span data-uz="OAuth (Google / Apple)" data-en="OAuth (Google / Apple)">OAuth (Google / Apple)</span>
+                            </div>
+                            <span class="skill-pct">80%</span>
+                        </div>
+                        <div class="bar"><span data-level="80"></span></div>
+                        <p class="skill-note" data-uz="ID-token tekshiruvi, kod almashinuvi, bitta email — bitta profil." data-en="ID-token verification, code exchange, one email — one profile.">ID-token tekshiruvi, kod almashinuvi, bitta email — bitta profil.</p>
+                    </div>
+                    
+                    <div class="card skill" data-tilt>
+                        <div class="skill-top">
+                            <div class="skill-name">
+                                <span class="skill-ico">API</span>
+                                <span data-uz="Swagger / OpenAPI" data-en="Swagger / OpenAPI">Swagger / OpenAPI</span>
+                            </div>
+                            <span class="skill-pct">84%</span>
+                        </div>
+                        <div class="bar"><span data-level="84"></span></div>
+                        <p class="skill-note" data-uz="drf-spectacular bilan avtomatik hujjat va sxema tekshiruvi." data-en="Auto-generated docs and schema checks with drf-spectacular.">drf-spectacular bilan avtomatik hujjat va sxema tekshiruvi.</p>
+                    </div>
+                    
+                </div>
+                
+                <div class="skill-panel" data-panel="ops">
+                    
+                    <div class="card skill" data-tilt>
+                        <div class="skill-top">
+                            <div class="skill-name">
+                                <span class="skill-ico">Git</span>
+                                <span data-uz="Git / GitHub" data-en="Git / GitHub">Git / GitHub</span>
+                            </div>
+                            <span class="skill-pct">85%</span>
+                        </div>
+                        <div class="bar"><span data-level="85"></span></div>
+                        <p class="skill-note" data-uz="Branch strategiyasi, pull request, kod ko‘rigi." data-en="Branching strategy, pull requests, code review.">Branch strategiyasi, pull request, kod ko‘rigi.</p>
+                    </div>
+                    
+                    <div class="card skill" data-tilt>
+                        <div class="skill-top">
+                            <div class="skill-name">
+                                <span class="skill-ico">Dkr</span>
+                                <span data-uz="Docker" data-en="Docker">Docker</span>
+                            </div>
+                            <span class="skill-pct">72%</span>
+                        </div>
+                        <div class="bar"><span data-level="72"></span></div>
+                        <p class="skill-note" data-uz="Konteynerlash, docker-compose bilan lokal muhit." data-en="Containerisation, local environments with docker-compose.">Konteynerlash, docker-compose bilan lokal muhit.</p>
+                    </div>
+                    
+                    <div class="card skill" data-tilt>
+                        <div class="skill-top">
+                            <div class="skill-name">
+                                <span class="skill-ico">CI</span>
+                                <span data-uz="CI (GitHub Actions)" data-en="CI (GitHub Actions)">CI (GitHub Actions)</span>
+                            </div>
+                            <span class="skill-pct">75%</span>
+                        </div>
+                        <div class="bar"><span data-level="75"></span></div>
+                        <p class="skill-note" data-uz="Har push’da testlar, migratsiya va deploy tekshiruvi." data-en="Tests, migration and deploy checks on every push.">Har push’da testlar, migratsiya va deploy tekshiruvi.</p>
+                    </div>
+                    
+                    <div class="card skill" data-tilt>
+                        <div class="skill-top">
+                            <div class="skill-name">
+                                <span class="skill-ico">Srv</span>
+                                <span data-uz="Linux / Gunicorn / Nginx" data-en="Linux / Gunicorn / Nginx">Linux / Gunicorn / Nginx</span>
+                            </div>
+                            <span class="skill-pct">76%</span>
+                        </div>
+                        <div class="bar"><span data-level="76"></span></div>
+                        <p class="skill-note" data-uz="Serverga chiqarish, statik fayllar, log va monitoring." data-en="Deployment, static files, logging and monitoring.">Serverga chiqarish, statik fayllar, log va monitoring.</p>
+                    </div>
+                    
+                </div>
+                
+                <div class="skill-panel" data-panel="extra">
+                    
+                    <div class="card skill" data-tilt>
+                        <div class="skill-top">
+                            <div class="skill-name">
+                                <span class="skill-ico">Bot</span>
+                                <span data-uz="Telegram botlar (aiogram)" data-en="Telegram bots (aiogram)">Telegram botlar (aiogram)</span>
+                            </div>
+                            <span class="skill-pct">80%</span>
+                        </div>
+                        <div class="bar"><span data-level="80"></span></div>
+                        <p class="skill-note" data-uz="aiogram 3, FSM holatlar, inline tugmalar, webhook." data-en="aiogram 3, FSM states, inline keyboards, webhooks.">aiogram 3, FSM holatlar, inline tugmalar, webhook.</p>
+                    </div>
+                    
+                    <div class="card skill" data-tilt>
+                        <div class="skill-top">
+                            <div class="skill-name">
+                                <span class="skill-ico">&lt;/&gt;</span>
+                                <span data-uz="HTML / CSS" data-en="HTML / CSS">HTML / CSS</span>
+                            </div>
+                            <span class="skill-pct">74%</span>
+                        </div>
+                        <div class="bar"><span data-level="74"></span></div>
+                        <p class="skill-note" data-uz="Moslashuvchan sahifalar, animatsiyalar, Django shablonlari." data-en="Responsive layouts, animations, Django templates.">Moslashuvchan sahifalar, animatsiyalar, Django shablonlari.</p>
+                    </div>
+                    
+                    <div class="card skill" data-tilt>
+                        <div class="skill-top">
+                            <div class="skill-name">
+                                <span class="skill-ico">JS</span>
+                                <span data-uz="JavaScript" data-en="JavaScript">JavaScript</span>
+                            </div>
+                            <span class="skill-pct">68%</span>
+                        </div>
+                        <div class="bar"><span data-level="68"></span></div>
+                        <p class="skill-note" data-uz="DOM, fetch, interaktiv interfeys bo‘laklari." data-en="DOM, fetch, interactive UI pieces.">DOM, fetch, interaktiv interfeys bo‘laklari.</p>
+                    </div>
+                    
+                    <div class="card skill" data-tilt>
+                        <div class="skill-top">
+                            <div class="skill-name">
+                                <span class="skill-ico">Tst</span>
+                                <span data-uz="Test yozish" data-en="Testing">Test yozish</span>
+                            </div>
+                            <span class="skill-pct">78%</span>
+                        </div>
+                        <div class="bar"><span data-level="78"></span></div>
+                        <p class="skill-note" data-uz="Django test framework, API testlari, CI ichida avtomatik ishga tushirish." data-en="Django test framework, API tests, automated runs in CI.">Django test framework, API testlari, CI ichida avtomatik ishga tushirish.</p>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- ================= Loyihalar ================= -->
+        <section id="projects">
+            <div class="wrap">
+                <div class="sec-head" data-reveal>
+                    <span class="tag"><i class="dot"></i><span data-uz="Loyihalar"
+                              data-en="Projects">Loyihalar</span></span>
+                    <h2>
+                        <span data-uz="Noldan qurgan" data-en="Systems I built">Noldan qurgan</span>
+                        <span class="grad" data-uz="tizimlarim" data-en="from scratch">tizimlarim</span>
+                    </h2>
+                    <p data-uz="Ikkalasi ham o‘quv loyihasi emas — haqiqiy foydalanuvchilar uchun mo‘ljallangan."
+                       data-en="Neither is a toy project — both are aimed at real users.">
+                        Ikkalasi ham o‘quv loyihasi emas — haqiqiy foydalanuvchilar uchun mo‘ljallangan.</p>
+                </div>
+
+                <div class="projects">
+                    
+                    <article class="card project" data-reveal style="--delay:020ms">
+                        <div class="project-visual">
+                            <span class="project-index">PROJECT / 01</span>
+                            <div class="project-emblem">DT</div>
+                            <span class="project-type" data-uz="Ta’lim platformasi · REST API"
+                                  data-en="Education platform · REST API">Ta’lim platformasi · REST API</span>
+                        </div>
+
+                        <div class="project-body">
+                            <h3>DTM Test</h3>
+                            <div class="project-role" data-uz="Backend dasturchi — to‘liq backend mening zimmamda"
+                                 data-en="Backend developer — full backend ownership">Backend dasturchi — to‘liq backend mening zimmamda</div>
+                            <p data-uz="DTM (milliy sertifikat va oliygohga kirish) imtihoniga tayyorgarlik ko‘rayotgan o‘quvchilar uchun platformaning backend qismi. O‘quvchi test ishlaydi, xatolari ustida takrorlash kartochkalari orqali ishlaydi, XP va streak yig‘adi, haftalik ligalarda boshqalar bilan raqobatlashadi. Mentorlar esa o‘z o‘quvchilarining natijalarini alohida panelda kuzatib boradi." data-en="The backend of a platform for students preparing for the Uzbek national university entrance exam. Students take tests, revisit mistakes through spaced-repetition cards, collect XP and streaks, and compete in weekly leagues, while mentors track their students from a separate dashboard.">DTM (milliy sertifikat va oliygohga kirish) imtihoniga tayyorgarlik ko‘rayotgan o‘quvchilar uchun platformaning backend qismi. O‘quvchi test ishlaydi, xatolari ustida takrorlash kartochkalari orqali ishlaydi, XP va streak yig‘adi, haftalik ligalarda boshqalar bilan raqobatlashadi. Mentorlar esa o‘z o‘quvchilarining natijalarini alohida panelda kuzatib boradi.</p>
+
+                            <ul class="feature-list">
+                                
+                                <li data-uz="9 ta Django ilovasi, 17 000+ qator Python kodi, shundan 3 000+ qatori testlar." data-en="9 Django apps, 17,000+ lines of Python, 3,000+ of them tests.">9 ta Django ilovasi, 17 000+ qator Python kodi, shundan 3 000+ qatori testlar.</li>
+                                
+                                <li data-uz="Takrorlash tizimi SM-2 algoritmi asosida: har bir savol o‘z muddatida qaytadi." data-en="SM-2 based spaced repetition: every question comes back when it should.">Takrorlash tizimi SM-2 algoritmi asosida: har bir savol o‘z muddatida qaytadi.</li>
+                                
+                                <li data-uz="Google va Apple orqali kirish, JWT token rotatsiyasi va blacklist." data-en="Google and Apple sign-in, JWT rotation and token blacklisting.">Google va Apple orqali kirish, JWT token rotatsiyasi va blacklist.</li>
+                                
+                                <li data-uz="Obuna va to‘lov mantig‘i: tarif chegaralari, kunlik limitlar, tarifni oshirish qoidalari." data-en="Subscription and billing logic: plan entitlements, daily limits, upgrade rules.">Obuna va to‘lov mantig‘i: tarif chegaralari, kunlik limitlar, tarifni oshirish qoidalari.</li>
+                                
+                                <li data-uz="Celery Beat bilan fon ishlari — reyting qayta hisoblash, ligalarni yopish, obunani tugatish." data-en="Celery Beat background jobs — rebuilding ratings, closing leagues, expiring subscriptions.">Celery Beat bilan fon ishlari — reyting qayta hisoblash, ligalarni yopish, obunani tugatish.</li>
+                                
+                                <li data-uz="Kontent uch tilda (uz / ru / en), til so‘rovdan aniqlanadi." data-en="Trilingual content (uz / ru / en) resolved per request.">Kontent uch tilda (uz / ru / en), til so‘rovdan aniqlanadi.</li>
+                                
+                                <li data-uz="Har push’da GitHub Actions testlarni, migratsiyalarni va API sxemasini tekshiradi." data-en="GitHub Actions checks tests, migrations and the API schema on every push.">Har push’da GitHub Actions testlarni, migratsiyalarni va API sxemasini tekshiradi.</li>
+                                
+                            </ul>
+
+                            
+
+                            <div class="chips">
+                                <span class="chip">Python 3.12</span><span class="chip">Django 6</span><span class="chip">DRF</span><span class="chip">PostgreSQL</span><span class="chip">Redis</span><span class="chip">Celery</span><span class="chip">SimpleJWT</span><span class="chip">Google/Apple OAuth</span><span class="chip">drf-spectacular</span><span class="chip">Gunicorn</span><span class="chip">GitHub Actions</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="card project" data-reveal style="--delay:120ms">
+                        <div class="project-visual">
+                            <span class="project-index">PROJECT / 02</span>
+                            <div class="project-emblem">Fe</div>
+                            <span class="project-type" data-uz="Bron qilish platformasi · REST API"
+                                  data-en="Booking platform · REST API">Bron qilish platformasi · REST API</span>
+                        </div>
+
+                        <div class="project-body">
+                            <h3>Feasto</h3>
+                            <div class="project-role" data-uz="Backend dasturchi — ma’lumotlar modeli va biznes mantiq"
+                                 data-en="Backend developer — data model and business logic">Backend dasturchi — ma’lumotlar modeli va biznes mantiq</div>
+                            <p data-uz="O‘zbekistondagi restoran va to‘yxonalarni onlayn qidirib, joy bron qilish uchun platforma. Biznes egasi ariza yuboradi, admin tasdiqlaydi, so‘ng u o‘z zallari, menyusi va narxlarini boshqaradi. Foydalanuvchi tuman, oshxona turi, sig‘im va reyting bo‘yicha qidirib, oldindan to‘lov bilan vaqt band qiladi va tashrifdan keyin sharh qoldiradi." data-en="A platform for finding and booking restaurants and wedding venues in Uzbekistan. An owner applies, an admin approves, and they then manage their halls, menus and pricing. Users search by district, cuisine, capacity and rating, reserve a slot with a deposit, and leave a review after the visit.">O‘zbekistondagi restoran va to‘yxonalarni onlayn qidirib, joy bron qilish uchun platforma. Biznes egasi ariza yuboradi, admin tasdiqlaydi, so‘ng u o‘z zallari, menyusi va narxlarini boshqaradi. Foydalanuvchi tuman, oshxona turi, sig‘im va reyting bo‘yicha qidirib, oldindan to‘lov bilan vaqt band qiladi va tashrifdan keyin sharh qoldiradi.</p>
+
+                            <ul class="feature-list">
+                                
+                                <li data-uz="9 ta ilova, 5 500+ qator Python kodi — modellar, servislar va signal mantiqisi." data-en="9 apps, 5,500+ lines of Python — models, services and signal logic.">9 ta ilova, 5 500+ qator Python kodi — modellar, servislar va signal mantiqisi.</li>
+                                
+                                <li data-uz="Barcha modellarda UUID kalitlar, umumiy BaseModel va toza migratsiya tarixi." data-en="UUID keys across all models, a shared BaseModel and a clean migration history.">Barcha modellarda UUID kalitlar, umumiy BaseModel va toza migratsiya tarixi.</li>
+                                
+                                <li data-uz="Bron tizimi: bo‘sh vaqtlarni oylab oldindan generatsiya qilish, bekor qilish muddati, depozit hisobi." data-en="Reservation engine: months of availability generated ahead, cancel deadlines, deposit calculation.">Bron tizimi: bo‘sh vaqtlarni oylab oldindan generatsiya qilish, bekor qilish muddati, depozit hisobi.</li>
+                                
+                                <li data-uz="Sharh faqat haqiqiy bronga bog‘lanadi — reyting va biznes o‘rni avtomatik qayta hisoblanadi." data-en="Reviews tied one-to-one to real reservations — rating and rank recalculated automatically.">Sharh faqat haqiqiy bronga bog‘lanadi — reyting va biznes o‘rni avtomatik qayta hisoblanadi.</li>
+                                
+                                <li data-uz="Foydalanuvchi ishonch balli (0–100): bekor qilingan bronlar ballni kamaytiradi." data-en="A 0–100 user trust score: cancellations lower it.">Foydalanuvchi ishonch balli (0–100): bekor qilingan bronlar ballni kamaytiradi.</li>
+                                
+                                <li data-uz="Sinov muddati va pullik obuna, eslatmalar Celery jadvali orqali yuboriladi." data-en="Trial and paid subscriptions, with reminders sent on a Celery schedule.">Sinov muddati va pullik obuna, eslatmalar Celery jadvali orqali yuboriladi.</li>
+                                
+                                <li data-uz="django-unfold asosidagi boy admin panel: ommaviy amallar va maxsus formalar bilan." data-en="A rich django-unfold admin with bulk actions and custom forms.">django-unfold asosidagi boy admin panel: ommaviy amallar va maxsus formalar bilan.</li>
+                                
+                            </ul>
+
+                            
+                            <p class="skill-note" style="margin-bottom:18px" data-uz="⚙ Ishlab chiqilmoqda — model, servis qatlami va admin panel tayyor, HTTP qatlami yozilmoqda."
+                               data-en="⚙ In progress — models, service layer and admin are done; the HTTP layer is being written.">⚙ Ishlab chiqilmoqda — model, servis qatlami va admin panel tayyor, HTTP qatlami yozilmoqda.</p>
+                            
+
+                            <div class="chips">
+                                <span class="chip">Python</span><span class="chip">Django 5.2</span><span class="chip">DRF</span><span class="chip">PostgreSQL</span><span class="chip">Redis</span><span class="chip">Celery</span><span class="chip">SimpleJWT</span><span class="chip">Google OAuth</span><span class="chip">Argon2</span><span class="chip">django-unfold</span><span class="chip">Gunicorn</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Ish uslubim ================= -->
+        <section id="process">
+            <div class="wrap">
+                <div class="sec-head" data-reveal>
+                    <span class="tag"><i class="dot"></i><span data-uz="Ish uslubim"
+                              data-en="How I work">Ish uslubim</span></span>
+                    <h2>
+                        <span data-uz="Loyiha" data-en="From idea">Loyiha</span>
+                        <span class="grad" data-uz="qanday quriladi" data-en="to production">qanday quriladi</span>
+                    </h2>
+                </div>
+
+                <div class="timeline">
+                    
+                    <div class="tl-item" data-reveal="left" style="--delay:000ms">
+                        <span class="tl-year">STEP 01</span>
+                        <h4 data-uz="Talabni tushunish" data-en="Understand the requirement">Talabni tushunish</h4>
+                        <p data-uz="Kod yozishdan oldin nima kerakligini aniqlayman: kim foydalanadi, qanday holatlar bor, nima qilmasligi kerak." data-en="Before writing code I pin down what is actually needed: who uses it, which edge cases exist, and what it must not do.">Kod yozishdan oldin nima kerakligini aniqlayman: kim foydalanadi, qanday holatlar bor, nima qilmasligi kerak.</p>
+                    </div>
+                    
+                    <div class="tl-item" data-reveal="left" style="--delay:100ms">
+                        <span class="tl-year">STEP 02</span>
+                        <h4 data-uz="Ma’lumot modelini loyihalash" data-en="Design the data model">Ma’lumot modelini loyihalash</h4>
+                        <p data-uz="Modellar va bog‘lanishlar — tizimning asosi. Bu joyda qilingan xato keyin har bir qatorga ta’sir qiladi." data-en="Models and relations are the foundation. A mistake here reaches every line written afterwards.">Modellar va bog‘lanishlar — tizimning asosi. Bu joyda qilingan xato keyin har bir qatorga ta’sir qiladi.</p>
+                    </div>
+                    
+                    <div class="tl-item" data-reveal="left" style="--delay:200ms">
+                        <span class="tl-year">STEP 03</span>
+                        <h4 data-uz="Biznes mantiqni alohida qatlamga chiqarish" data-en="Keep business logic in a service layer">Biznes mantiqni alohida qatlamga chiqarish</h4>
+                        <p data-uz="Mantiqni view ichiga tiqmayman — servis funksiyalariga ajrataman, shunda test yozish va qayta ishlatish oson bo‘ladi." data-en="Logic does not live inside views — it goes into service functions, which makes it testable and reusable.">Mantiqni view ichiga tiqmayman — servis funksiyalariga ajrataman, shunda test yozish va qayta ishlatish oson bo‘ladi.</p>
+                    </div>
+                    
+                    <div class="tl-item" data-reveal="left" style="--delay:300ms">
+                        <span class="tl-year">STEP 04</span>
+                        <h4 data-uz="Test va hujjat" data-en="Tests and documentation">Test va hujjat</h4>
+                        <p data-uz="Muhim yo‘llar test bilan qoplanadi, API esa Swagger orqali o‘zini o‘zi hujjatlashtiradi — frontend dasturchi so‘ramay tushunadi." data-en="Critical paths get tests, and the API documents itself through Swagger, so a frontend developer does not have to ask.">Muhim yo‘llar test bilan qoplanadi, API esa Swagger orqali o‘zini o‘zi hujjatlashtiradi — frontend dasturchi so‘ramay tushunadi.</p>
+                    </div>
+                    
+                    <div class="tl-item" data-reveal="left" style="--delay:400ms">
+                        <span class="tl-year">STEP 05</span>
+                        <h4 data-uz="Ishga tushirish va kuzatish" data-en="Ship and observe">Ishga tushirish va kuzatish</h4>
+                        <p data-uz="CI tekshiradi, server chiqariladi, loglar va xatolar kuzatiladi. Ish shu yerda tugamaydi — shu yerdan boshlanadi." data-en="CI checks it, it goes to a server, logs and errors get watched. The work does not end there — it starts there.">CI tekshiradi, server chiqariladi, loglar va xatolar kuzatiladi. Ish shu yerda tugamaydi — shu yerdan boshlanadi.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Aloqa ================= -->
+        <section id="contact">
+            <div class="wrap">
+                <div class="sec-head" data-reveal>
+                    <span class="tag"><i class="dot"></i><span data-uz="Aloqa"
+                              data-en="Contact">Aloqa</span></span>
+                    <h2>
+                        <span data-uz="Keling," data-en="Let us">Keling,</span>
+                        <span class="grad" data-uz="gaplashamiz" data-en="talk">gaplashamiz</span>
+                    </h2>
+                    <p data-uz="Telegram eng tez yo‘l. Qo‘ng‘iroq qilsangiz ham bo‘ladi."
+                       data-en="Telegram is the fastest way. A call works too.">
+                        Telegram eng tez yo‘l. Qo‘ng‘iroq qilsangiz ham bo‘ladi.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <a class="card contact-card" href="https://t.me/akobir_marupov" target="_blank" rel="noopener"
+                       data-reveal data-tilt>
+                        <span class="contact-ico">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M21.9 4.3 18.6 19.9c-.25 1.1-.9 1.37-1.83.85l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.14 9.36-8.46c.4-.36-.09-.56-.63-.2L5.78 13.3l-4.98-1.56c-1.08-.34-1.1-1.08.23-1.6l19.47-7.5c.9-.33 1.69.2 1.4 1.66z" />
+                            </svg>
+                        </span>
+                        <span class="contact-meta">
+                            <span class="k">Telegram</span>
+                            <span class="v">@akobir_marupov</span>
+                        </span>
+                    </a>
+
+                    <a class="card contact-card" href="https://github.com/AkobirMarupov" target="_blank" rel="noopener"
+                       data-reveal style="--delay:80ms" data-tilt>
+                        <span class="contact-ico">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 .5C5.73.5.9 5.33.9 11.6c0 4.9 3.17 9.06 7.57 10.53.55.1.75-.24.75-.53v-1.9c-3.08.67-3.73-1.48-3.73-1.48-.5-1.29-1.23-1.63-1.23-1.63-1.01-.69.08-.67.08-.67 1.11.08 1.7 1.15 1.7 1.15.99 1.7 2.6 1.21 3.23.93.1-.72.39-1.21.7-1.49-2.46-.28-5.05-1.23-5.05-5.48 0-1.21.43-2.2 1.14-2.98-.11-.28-.5-1.41.11-2.94 0 0 .93-.3 3.05 1.14a10.5 10.5 0 0 1 5.56 0c2.12-1.44 3.05-1.14 3.05-1.14.61 1.53.22 2.66.11 2.94.71.78 1.14 1.77 1.14 2.98 0 4.26-2.6 5.2-5.07 5.47.4.35.76 1.03.76 2.08v3.08c0 .3.2.64.76.53 4.4-1.47 7.56-5.63 7.56-10.53C23.1 5.33 18.27.5 12 .5z" />
+                            </svg>
+                        </span>
+                        <span class="contact-meta">
+                            <span class="k">GitHub</span>
+                            <span class="v">AkobirMarupov</span>
+                        </span>
+                    </a>
+
+                    <a class="card contact-card" href="https://www.linkedin.com/in/akobir-marupov-55b528401/" target="_blank" rel="noopener"
+                       data-reveal style="--delay:160ms" data-tilt>
+                        <span class="contact-ico">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.64h.05c.53-.95 1.83-1.95 3.76-1.95 4.02 0 4.76 2.5 4.76 5.77V21h-4v-5.63c0-1.34-.03-3.07-1.9-3.07-1.9 0-2.19 1.46-2.19 2.97V21h-4V9z" />
+                            </svg>
+                        </span>
+                        <span class="contact-meta">
+                            <span class="k">LinkedIn</span>
+                            <span class="v">akobir-marupov</span>
+                        </span>
+                    </a>
+
+                    <a class="card contact-card" href="tel:+998771210418" data-reveal style="--delay:240ms"
+                       data-tilt>
+                        <span class="contact-ico">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.26-1.27a2 2 0 0 1 2.11-.45c.9.33 1.85.56 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                        </span>
+                        <span class="contact-meta">
+                            <span class="k" data-uz="Telefon" data-en="Phone">Telefon</span>
+                            <span class="v">+998 77 121 04 18</span>
+                        </span>
+                    </a>
+
+                    <a class="card contact-card" href="tel:+998504445512" data-reveal style="--delay:320ms"
+                       data-tilt>
+                        <span class="contact-ico">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.26-1.27a2 2 0 0 1 2.11-.45c.9.33 1.85.56 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                        </span>
+                        <span class="contact-meta">
+                            <span class="k" data-uz="Qo‘shimcha telefon" data-en="Second phone">Qo‘shimcha telefon</span>
+                            <span class="v">+998 50 444 55 12</span>
+                        </span>
+                    </a>
+
+                    <div class="card contact-card" data-reveal style="--delay:400ms" data-tilt>
+                        <span class="contact-ico">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </span>
+                        <span class="contact-meta">
+                            <span class="k" data-uz="Joylashuv" data-en="Location">Joylashuv</span>
+                            <span class="v" data-uz="Toshkent, O‘zbekiston"
+                                  data-en="Tashkent, Uzbekistan">Toshkent, O‘zbekiston</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="cta" data-reveal="zoom">
+                    <h3>
+                        <span data-uz="Loyihangiz uchun backend kerakmi?"
+                              data-en="Need a backend for your project?">Loyihangiz uchun backend kerakmi?</span>
+                    </h3>
+                    <p data-uz="G‘oyangizni yozing — qanday qurish mumkinligini birga o‘ylaymiz."
+                       data-en="Tell me the idea — we will figure out how to build it.">
+                        G‘oyangizni yozing — qanday qurish mumkinligini birga o‘ylaymiz.</p>
+                    <a href="https://t.me/akobir_marupov" target="_blank" rel="noopener" class="btn btn-fill" data-magnet>
+                        <span data-uz="Telegramda yozish" data-en="Message on Telegram">Telegramda yozish</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= Footer ================= -->
+    <footer class="site-footer">
+        <div class="wrap footer-inner">
+            <span>© <span id="year"></span> Akobir Marupov</span>
+            <span data-uz="Django bilan qurilgan · Toshkent"
+                  data-en="Built with Django · Tashkent">Django bilan qurilgan · Toshkent</span>
+            <span>
+                <a href="https://github.com/AkobirMarupov" target="_blank" rel="noopener">GitHub</a> ·
+                <a href="https://t.me/akobir_marupov" target="_blank" rel="noopener">Telegram</a> ·
+                <a href="https://www.linkedin.com/in/akobir-marupov-55b528401/" target="_blank" rel="noopener">LinkedIn</a>
+            </span>
+        </div>
+    </footer>
+
+    <button type="button" class="to-top" id="toTop" aria-label="Yuqoriga">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round">
+            <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg>
+    </button>
+
+    <script id="roles-data" type="application/json">[{"uz": "Backend dasturchi", "en": "Backend Developer"}, {"uz": "Django / DRF mutaxassisi", "en": "Django / DRF Specialist"}, {"uz": "REST API arxitektori", "en": "REST API Architect"}, {"uz": "Python bilan ishlayman", "en": "I build things with Python"}]</script>
+    <script src="static/cv/js/main.js"></script>
+</body>
+
+</html>
